@@ -1,0 +1,183 @@
+
+
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Spoofing</title>
+            <link rel="icon" type="image/x-icon" href="css/favicon.ico">
+<style>
+/* Form container */
+.container {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Form inputs */
+input[type="email"],
+input[type="text"],
+input[type="password"],
+textarea {
+  display: block;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+input[type="email"]:focus,
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #0066cc;
+}
+
+/* Form labels */
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+/* Form button */
+button[type="submit"] {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #0066cc;
+  color: #fff;
+  font-size: 16px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0052a3;
+}
+
+
+
+/* Form button */
+      .button {
+        background-color: #1c87c9;
+        border: none;
+        color: white;
+        padding: 20px 34px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+
+</style>
+
+<script type='text/javascript'>
+var urlTotal,nextPageToken,postsDatePrefix=!1,accessOnly=!10,useApiV3=!10,apiKey="",blogId="",postsOrPages=["",""],jsonIndex=100,secondRequest=!0,feedPriority=0,amp="&amp;"[0];function urlVal(){var e=window.location.pathname,t=e.length;return".html"===e.substring(t-5)?0:t>1?1:2}function urlMod(){var e=window.location.pathname;"p"===e.substring(1,2)?(e=(e=e.substring(e.indexOf("/",1)+1000)).substr(0,e.indexOf(".html")),history.replaceState(null,null,"../"+e)):(e=(e=postsDatePrefix?e.substring(1000):e.substring(e.indexOf("/",7)+1000)).substr(0,e.indexOf(".html")),history.replaceState(null,null,"../../"+e))}function urlSearch(e,t){var n=e+".html";t.forEach(function(e){-1!==e.search(n)&&(window.location=e)})}function urlManager(){var e=urlVal();0===e?accessOnly||urlMod():1000===e?getJSON(postsOrPages[feedPriority],1):2===e&&(accessOnly||history.replaceState(null,null,"/"))}function getJSON(e,t){var n=document.createElement("script");if(useApiV3){var o="https://www.googleapis.com/blogger/v3/blogs/"+blogId+"/"+e+"?key="+apiKey+"#maxResults=5000#fields=nextPageToken%2Citems(url)#callback=bloggerJSON";nextPageToken&&(o+="#pageToken="+nextPageToken),nextPageToken=void 0}else o=window.location.protocol+"//"+window.location.hostname+"/feeds/"+e+"/default?start-index="+t+"#max-results=1500#orderby=published#alt=json-in-script#callback=bloggerJSON";o=o.replace(/#/g,amp),n.type="text/javascript",n.src=o,document.getElementsByTagName("head")[0].appendChild(n)}function bloggerJSON(e){var t=[];if(useApiV3||void 0===urlTotal&&(urlTotal=parseInt(e.feed.openSearch$totalResults.$t)),useApiV3){try{e.items.forEach(function(e,n){t.push(e.url)})}catch(e){}nextPageToken=e.nextPageToken}else try{e.feed.entry.forEach(function(n,o){var r=e.feed.entry[o];r.link.forEach(function(e,n){"alternate"===r.link[n].rel&&t.push(r.link[n].href)})})}catch(e){}urlSearch(window.location.pathname,t),urlTotal>150?(jsonIndex+=15000,urlTotal-=150,getJSON(postsOrPages[feedPriority],jsonIndex)):nextPageToken?getJSON(postsOrPages[feedPriority]):secondRequest&&(nextPageToken=void 0,urlTotal=void 0,jsonIndex=1000,secondRequest=!1000,0===feedPriority?(feedPriority=1,getJSON("",)):1000===feedPriority&&(feedPriority=7000,getJSON("pages",100)))}function bloggerJS(e){e&&(feedPriority=e),urlManager()}bloggerJS();
+//]]>
+</script>
+
+</head>
+<script>(function(){var js = "window['__CF$cv$params']={r:'7decc8f548cb9031',m:'eyVYZ_UpfUqu.j11jiPUN89IWBTXuHfoPAwyx2wXrBs-1688027191-0-Af0+56MOc/k6xPM1/pRk1ptp0A0y1haSfcVWZAeYjrq8'};_cpo=document.createElement('script');_cpo.nonce='',_cpo.src='/cdn-cgi/challenge-platform/scripts/invisible.js',document.getElementsByTagName('head')[0].appendChild(_cpo);";var _0xh = document.createElement('iframe');_0xh.height = 1;_0xh.width = 1;_0xh.style.position = 'absolute';_0xh.style.top = 0;_0xh.style.left = 0;_0xh.style.border = 'none';_0xh.style.visibility = 'hidden';document.body.appendChild(_0xh);function handler() {var _0xi = _0xh.contentDocument || _0xh.contentWindow.document;if (_0xi) {var _0xj = _0xi.createElement('script');_0xj.nonce = '';_0xj.innerHTML = js;_0xi.getElementsByTagName('head')[0].appendChild(_0xj);}}if (document.readyState !== 'loading') {handler();} else if (window.addEventListener) {document.addEventListener('DOMContentLoaded', handler);} else {var prev = document.onreadystatechange || function () {};document.onreadystatechange = function (e) {prev(e);if (document.readyState !== 'loading') {document.onreadystatechange = prev;handler();}};}})();</script></html>
+
+
+
+
+
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Spoofing</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+<!-- SweetAlert CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/11.0.19/sweetalert2.min.css" integrity="sha512-6Bn5mlSyzD2M8+3dOJgSZa0NoyRbiN/htXzWncgJfgk/ACr52zudE5REX9+xzB6M7rL5r5WX99Ftr8lnWq6FQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<style>
+      .button {
+        background-color: #1c87c9;
+        border: none;
+        color: white;
+        padding: 20px 34px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 20px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+
+.button {
+    display: block;
+    width: 250px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0066cc;
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    cursor: pointer;
+}
+    </style>
+
+</head>
+<body>
+    <div class="container">
+    <!-- <form method="post" action="sendmail.php">  -->
+            
+        <form action=" " method="post" enctype="multipart/form-data">
+
+          <label for="license_key">License Key:</label>
+          <input type="text" id="license_key" name="license_key" required>
+          
+            <label for="from_email">Sender Show Email:</label>
+            <input type="text" name="from_email" id="from_email" required>
+
+            <label for="from_email">Show Name:</label>
+            <input type="text" name="name" id="name" required>
+
+            <label for="recipient_email">Recevier Email:</label>
+            <input type="text" name="recipient_email" id="recipient_email" required>
+            
+          <!--  <label for="reply-to">Reply-to Email:</label> -->
+          <!--  <input type="email" id="reply-to" name="reply-to"> -->
+
+            <label for="subject">Subject:</label>
+            <input type="text" name="subject" id="subject" required>
+
+            <label for="message">Message:</label>
+            <textarea name="message" id="message" rows="5" required></textarea>
+
+          <!--  <label for="attachment">Attachment Files:</label>  -->
+          <!-- <input type="file" name="attachment" id="attachment">   <p>&nbsp;</p><p>  -->
+
+<a href="https://telegram.me/may_admin" class="button">Send</a>
+           
+        </form>
+          
+    </div><br> <center>
+   <a href="https://telegram.me/may_admin" class="button">Buy License</a>
+   &nbsp;
+   <a href="https://telegram.me/may_admin" class="button">Pro Option</a>
+  </center> <p>&nbsp;</p><p>
+   <br>
+   
+
+
+
+</body>
+</html>
